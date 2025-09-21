@@ -91,10 +91,16 @@ const Hero = () => {
                         className="social-links"
                         variants={staggerContainer}
                     >
-                        <motion.a href="https://github.com" target="_blank">
+                        <motion.a
+                            href="https://github.com/HarshVanetiya"
+                            target="_blank"
+                        >
                             <i className="fab fa-github"></i>
                         </motion.a>
-                        <motion.a href="https://linkedin.com" target="_blank">
+                        <motion.a
+                            href="https://www.linkedin.com/in/harsh-vanetiya"
+                            target="_blank"
+                        >
                             <i className="fab fa-linkedin"></i>
                         </motion.a>
                     </motion.div>
