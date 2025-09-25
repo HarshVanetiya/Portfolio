@@ -49,7 +49,7 @@ const Hero = () => {
                                         ease: "easeOut",
                                     }}
                                 >
-                                    {char}
+                                    {char === " " ? "\u00A0" : char}
                                 </motion.span>
                             ))}
                         </motion.h1>
@@ -58,13 +58,13 @@ const Hero = () => {
                         Full Stack Web Devloper
                     </motion.h2>
                     <motion.p className="hero-description" variants={fadeInUp}>
-                        I'm a full stack developer who loves building web
-                        applications that actually work well and make people's
-                        lives easier. I enjoy the whole journey - from figuring
-                        out what users need to watching the final product come
-                        to life. There's something satisfying about taking a
-                        messy problem and crafting it into clean, working code
-                        that businesses can rely on.
+                        I'm a full-stack developer who loves building web
+                        applications that work well and make people's lives
+                        easier. I enjoy the whole journey—from figuring out what
+                        users need to watching the final product come to life.
+                        There's something satisfying about taking a messy
+                        problem and crafting it into clean, functional code that
+                        businesses can rely on.
                     </motion.p>
                     <motion.div
                         className="cta-buttons"
@@ -94,14 +94,26 @@ const Hero = () => {
                         <motion.a
                             href="https://github.com/HarshVanetiya"
                             target="_blank"
+                            className="tooltip"
                         >
                             <i className="fab fa-github"></i>
+                            <span class="tooltip-text">Github</span>
                         </motion.a>
                         <motion.a
                             href="https://www.linkedin.com/in/harsh-vanetiya"
                             target="_blank"
+                            className="tooltip"
                         >
                             <i className="fab fa-linkedin"></i>
+                            <span class="tooltip-text">LinkedIn</span>
+                        </motion.a>
+                        <motion.a
+                            href="https://drive.google.com/file/d/1Ej7NuCWC-_j4ThKj8RizlBjLY54EJIEf/view?usp=sharing"
+                            target="_blank"
+                            className="tooltip"
+                        >
+                            <i className="fas fa-file-alt"></i>
+                            <span class="tooltip-text">Resume</span>
                         </motion.a>
                     </motion.div>
                 </motion.div>

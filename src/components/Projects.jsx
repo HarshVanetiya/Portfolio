@@ -52,11 +52,22 @@ const Projects = () => {
                             transition: { duration: 0.2 },
                         }}
                     />
-                    <h3>Ev CMS</h3>
+                    <h3>EV Charging Station Management System (CSMS)</h3>
                     <p>
-                        Communicate with ev chargers via OCPP and provide app
-                        less solution for ev charging station with overall
-                        analytics and business report.
+                        Architected and developed a full-stack EV CSMS,
+                        including a backend server using Node.js and an OCPP
+                        server to establish real-time, bidirectional
+                        communication with EV chargers. Designed and implemented
+                        a PostgreSQL database schema to manage charger status,
+                        user data, and partner information, feeding into an
+                        analytics dashboard built with React. Engineered an
+                        "app-less" EV charging solution by integrating
+                        Razorpay's API and webhooks, enabling seamless payments
+                        and session management via QR codes. Implemented a
+                        subscription-based model for partners and a secure
+                        wallet system for end-users. Established a CI/CD
+                        pipeline for the application, automating deployment to
+                        an AWS EC2 instance.
                     </p>
                     <div className="project-tech">
                         <span>Node</span>
@@ -67,7 +78,7 @@ const Projects = () => {
                         <span>RazorPay SDK</span>
                     </div>
                 </motion.div>
-                <motion.div
+                {/* <motion.div
                     className="project-card"
                     variants={fadeInUp}
                     whileHover={{ y: -10, transition: { duration: 0.2 } }}
@@ -118,7 +129,7 @@ const Projects = () => {
                         <span>OpenAI</span>
                         <span>Tailwind</span>
                     </div>
-                </motion.div>
+                </motion.div> */}
             </motion.div>
         </motion.section>
     );
