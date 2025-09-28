@@ -77,7 +77,7 @@ body {
 }
 
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
@@ -634,4 +634,86 @@ body {
 .tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
+}
+
+/* --- Default styles for .glitch (Desktop) --- */
+.glitch {
+    font-size: 5rem; /* Your current large font size for desktops */
+    font-weight: 700;
+    color: #fff;
+    /* Add any other existing styles you have for this class */
+}
+
+/* --- Responsive CSS for tablets --- */
+@media (max-width: 768px) {
+    .glitch {
+        font-size: 3.5rem; /* A smaller font size for tablets */
+        line-height: 1.2; /* Adjust line height for better spacing */
+    }
+}
+
+/* --- Responsive CSS for mobile phones --- */
+@media (max-width: 480px) {
+    .glitch {
+        font-size: 2.5rem; /* An even smaller font size for phones */
+        letter-spacing: -1px; /* Optional: tighten letter spacing */
+    }
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* 1. Show the hamburger toggle */
+    .menu-toggle {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 200; /* Must be above the menu */
+    }
+
+    /* 2. Position and hide the nav links initially */
+    .nav-links {
+        /* Take the links off the screen */
+        position: absolute;
+        top: 100%; /* Start right below the navbar */
+        left: 0;
+        width: 100%;
+
+        /* Arrange links vertically */
+        flex-direction: column;
+        align-items: center;
+
+        /* Visuals for the mobile menu backdrop */
+        background-color: rgba(0, 0, 0, 0.95);
+        padding: 2rem 0;
+
+        /* Transition for the slide-in/out effect */
+        transform: translateX(-100%); /* Slide off-screen to the left */
+        opacity: 0;
+        pointer-events: none; /* Prevents clicks when hidden */
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        z-index: 150;
+    }
+
+    /* 3. Show the menu when the 'open' class is applied */
+    .nav-links.open {
+        transform: translateX(0); /* Slide back to view */
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    /* 4. Adjust spacing for vertical links */
+    .nav-links li {
+        margin: 1rem 0; /* Vertical spacing */
+        width: 80%; /* Optional: for better click area */
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem; /* Larger font for mobile */
+        display: block;
+        padding: 0.5rem;
+    }
 }

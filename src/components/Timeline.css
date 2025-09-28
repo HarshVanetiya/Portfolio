@@ -1,0 +1,91 @@
+/* === TIMELINE STYLES === */
+/* Add this CSS to a new file (e.g., Timeline.css) and import it in Projects.jsx */
+
+.experience-heading {
+    margin-top: 6rem; /* Add space between project cards and the timeline */
+    margin-bottom: 3rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* The vertical line in the middle of the timeline */
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    background-color: #3b82f6; /* A blue accent color */
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    margin-left: -1.5px;
+    border-radius: 3px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 100%;
+    padding-left: 70px; /* Space for the line and dot */
+    padding-bottom: 3rem;
+}
+
+/* The circle on the timeline */
+.timeline-dot {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #1e293b; /* Dark background */
+    border: 3px solid #3b82f6; /* Blue border */
+    top: 15px;
+    left: 20px;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: #1e293b; /* Card background color */
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: #e2e8f0; /* Light text color for heading */
+    font-size: 1.25rem;
+}
+
+.timeline-content p {
+    margin-bottom: 0;
+    color: #94a3b8; /* Lighter grey for description */
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- MEDIA QUERY FOR RESPONSIVENESS --- */
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+}

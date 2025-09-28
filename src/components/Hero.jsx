@@ -97,7 +97,7 @@ const Hero = () => {
                             className="tooltip"
                         >
                             <i className="fab fa-github"></i>
-                            <span class="tooltip-text">Github</span>
+                            <span className="tooltip-text">Github</span>
                         </motion.a>
                         <motion.a
                             href="https://www.linkedin.com/in/harsh-vanetiya"
@@ -105,15 +105,15 @@ const Hero = () => {
                             className="tooltip"
                         >
                             <i className="fab fa-linkedin"></i>
-                            <span class="tooltip-text">LinkedIn</span>
+                            <span className="tooltip-text">LinkedIn</span>
                         </motion.a>
                         <motion.a
-                            href="https://drive.google.com/file/d/1Ej7NuCWC-_j4ThKj8RizlBjLY54EJIEf/view?usp=sharing"
+                            href="https://drive.google.com/file/d/1TQRsB_4vfMBzKP9kh8inPPkQ3vhIDoys/view?usp=sharing"
                             target="_blank"
                             className="tooltip"
                         >
                             <i className="fas fa-file-alt"></i>
-                            <span class="tooltip-text">Resume</span>
+                            <span className="tooltip-text">Resume</span>
                         </motion.a>
                     </motion.div>
                 </motion.div>

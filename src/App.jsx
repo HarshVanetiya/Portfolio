@@ -29,7 +29,8 @@ const App = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
             >
-                <p>&copy; 2025 hvanetiya, All rights reserved.</p>
+                <p>&copy; 2025 hvanetiya</p>
+                <p>hvanetiya@gmail.com | +91 7877172479</p>
             </motion.footer>
         </div>
     );

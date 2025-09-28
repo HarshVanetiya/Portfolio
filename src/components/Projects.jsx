@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
+// Make sure to import the new CSS file
+import "./Timeline.css";
 
 const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -10,6 +12,40 @@ const fadeInUp = {
 const staggerContainer = {
     animate: { transition: { staggerChildren: 0.1 } },
 };
+
+// Data for your work experience timeline
+const experiences = [
+    {
+        title: "EV Charging Station Management System (CSMS)",
+        description:
+            "Architected a full-stack EV CSMS with an OCPP server, payment integration via Razorpay, a partner subscription model, and deployed on AWS with a CI/CD pipeline.",
+    },
+    {
+        title: "Secure Login Automation (Chrome Extension)",
+        description:
+            "Independently engineered a secure Chrome Extension for a client to grant employees portal access without revealing credentials. Delivered solo in 4 days to high praise.",
+    },
+    {
+        title: "Gmail Automation Tool (Chrome Extension)",
+        description:
+            "Developed a complex extension that injected a custom UI into the Gmail interface for automated replies, meeting scheduling, and managing contracts/billing.",
+    },
+    {
+        title: "Advanced Web Scraper (Chrome Extension)",
+        description:
+            "Created a specialized web scraping extension to extract data from sites requiring authentication, serving as a critical data pipeline for an AI-powered web application.",
+    },
+    {
+        title: "Email Extractor Tool (Chrome Extension)",
+        description:
+            "Built a Chrome Extension to scrape and extract emails from web pages, featuring both single-page and bulk extraction capabilities using background scripts.",
+    },
+    {
+        title: "Legacy System Maintenance",
+        description:
+            "Analyzed, debugged, and successfully resolved critical issues in a legacy client project written in Vanilla.js, improving stability and earning positive client feedback.",
+    },
+];
 
 const Projects = () => {
     return (
@@ -78,58 +114,39 @@ const Projects = () => {
                         <span>RazorPay SDK</span>
                     </div>
                 </motion.div>
-                {/* <motion.div
-                    className="project-card"
-                    variants={fadeInUp}
-                    whileHover={{ y: -10, transition: { duration: 0.2 } }}
-                >
+            </motion.div>
+
+            {/* --- WORK EXPERIENCE TIMELINE --- */}
+            <motion.h2
+                className="experience-heading"
+                variants={fadeInUp}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+            >
+                Work Experience
+            </motion.h2>
+
+            <motion.div
+                className="timeline"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+            >
+                {experiences.map((exp, index) => (
                     <motion.div
-                        className="project-image"
-                        style={{
-                            backgroundImage: "url('/projects/cms.png')",
-                        }}
-                        whileHover={{
-                            scale: 1.05,
-                            transition: { duration: 0.2 },
-                        }}
-                    />
-                    <h3>AI SaaS Platform</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Reiciendis commodi, consequuntur provi
-                    </p>
-                    <div className="project-tech">
-                        <span>Next.js</span>
-                        <span>OpenAI</span>
-                        <span>Tailwind</span>
-                    </div>
-                </motion.div>
-                <motion.div
-                    className="project-card"
-                    variants={fadeInUp}
-                    whileHover={{ y: -10, transition: { duration: 0.2 } }}
-                >
-                    <motion.div
-                        className="project-image"
-                        style={{
-                            backgroundImage: "url('/projects/cms.png')",
-                        }}
-                        whileHover={{
-                            scale: 1.05,
-                            transition: { duration: 0.2 },
-                        }}
-                    />
-                    <h3>AI SaaS Platform</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Reiciendis commodi, consequuntur provi
-                    </p>
-                    <div className="project-tech">
-                        <span>Next.js</span>
-                        <span>OpenAI</span>
-                        <span>Tailwind</span>
-                    </div>
-                </motion.div> */}
+                        key={index}
+                        className="timeline-item"
+                        variants={fadeInUp}
+                    >
+                        <div className="timeline-dot"></div>
+                        <div className="timeline-content">
+                            <h3>{exp.title}</h3>
+                            <p>{exp.description}</p>
+                        </div>
+                    </motion.div>
+                ))}
             </motion.div>
         </motion.section>
     );
